@@ -1,0 +1,30 @@
+dist: xenial
+language: python
+
+python: 3.7
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+services:
+  - docker
+
+install:
+  - pip freeze | xargs pip uninstall -y
+  - pip install dump-env docker-compose
+  # Checking versions:
+  - docker --version && docker-compose --version
+  # Creating `.env` configuration file:
+  - dump-env -t config/.env.template -p 'SECRET_' > config/.env
+
+script:
+  - docker-compose -f docker-compose.yml
+    -f docker/docker-compose.prod.yml config --quiet
+  - docker-compose run --rm web sh ./docker/ci.sh
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
