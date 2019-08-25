@@ -21,6 +21,8 @@ pyclean () {
 }
 
 run_ci () {
+  echo "secret key: $SECRET_DJANGO_SECRET_KEY"
+  cat "./config/.env"
   # Running linting for all python files in the project:
   flake8 .
 
