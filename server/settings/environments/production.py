@@ -3,8 +3,8 @@
 """
 This file contains all the settings used in production.
 
-This file is required and if development.py is present these
-values are overridden.
+This file is required and if development.py is present these values are
+overridden.
 """
 
 from server.settings.components import config

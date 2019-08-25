@@ -4,8 +4,8 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from rest_framework import viewsets
 
+from server.apps.main.logic import repo
 from server.apps.main.serializers import BlogPostSerializer
-from server.apps.main.models import BlogPost
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -20,5 +20,6 @@ def index(request: HttpRequest) -> HttpResponse:
 
 class BlogPostViewset(viewsets.ModelViewSet):
     """API demo."""
-    serializer = BlogPostSerializer
-    queryset = BlogPost.objects.all()
+
+    serializer_class = BlogPostSerializer
+    queryset = repo.published_posts()

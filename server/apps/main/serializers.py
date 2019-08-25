@@ -6,14 +6,18 @@ from server.apps.main.models import BlogPost, User
 
 
 class UserSerializer(serializers.ModelSerializer):
-    class Meta:
+    """Serializer for the builtin `User` type."""
+
+    class Meta(object):
         model = User
         fields = ['username', 'email']
 
 
 class BlogPostSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for the custom `BlogPost` type."""
+
     author = UserSerializer()
 
-    class Meta:
+    class Meta(object):
         model = BlogPost
-        fields = ['author', 'text', 'is_published', 'wrong']
+        fields = ['author', 'text', 'is_published', 'created_at']

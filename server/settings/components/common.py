@@ -49,8 +49,11 @@ INSTALLED_APPS: Tuple[str, ...] = (
     'health_check.cache',
     'health_check.storage',
 
-    # Third party apps
+    # Third party apps:
     'django_http_referrer_policy',
+
+    # REST:
+    'rest_framework',
 )
 
 MIDDLEWARE: Tuple[str, ...] = (
