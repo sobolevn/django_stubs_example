@@ -21,7 +21,6 @@ pyclean () {
 }
 
 run_ci () {
-  cat "./config/.env"
   # Running linting for all python files in the project:
   flake8 .
 
