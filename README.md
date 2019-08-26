@@ -3,6 +3,8 @@
 Django Stubs Example.
 Source code for my article [`Typechecking Django and DRF`](https://sobolevn.me/2019/08/typechecking-django-and-drf).
 
+Please, make sure to read the article before diving into the source code.
+
 This project was generated with [`wemake-django-template`](https://github.com/wemake-services/wemake-django-template). Current template version is: [c5b6ea61352b1eb6ca1a4537ca571b2a5e595121](https://github.com/wemake-services/wemake-django-template/tree/c5b6ea61352b1eb6ca1a4537ca571b2a5e595121). See what is [updated](https://github.com/wemake-services/wemake-django-template/compare/c5b6ea61352b1eb6ca1a4537ca571b2a5e595121...master) since then.
 
 
